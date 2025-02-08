@@ -1,281 +1,186 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <!-- 响应式 meta 标签 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>跑步相关网页导航</title>
+  <title>跑起来 paobu.org 跑步,越野跑,马拉松</title>
   <style>
+    /* 基本页面样式 */
     body {
-      font-family: "微软雅黑", sans-serif;
       margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #2196F3;
+      color: #fff;
       padding: 20px;
-      background: #f9f9f9;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1em;
     }
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    h1, h2, h3 {
-      color: #333;
-      margin-top: 0;
-    }
-    .section-title {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
     }
     .category {
-      background: #fff;
-      margin: 20px 0;
-      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #ddd;
       border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      margin: 10px;
+      padding: 20px;
+      flex: 1 1 300px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .category h2 {
+      margin-top: 0;
+      color: #2196F3;
+      border-bottom: 2px solid #2196F3;
+      padding-bottom: 5px;
     }
     .category ul {
       list-style: none;
       padding-left: 0;
-      margin: 0;
-      /* 默认竖排排列 */
     }
     .category li {
-      margin: 5px 0;
+      margin: 10px 0;
     }
-    a {
-      color: #1e90ff;
+    .category li a {
+      color: #333;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    .category li a:hover {
+      color: #2196F3;
     }
-    /* 屏幕宽度大于600px时，每个分类内的网站采用两列布局 */
-    @media (min-width: 600px) {
-      .category ul {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .category li {
-        width: calc(50% - 10px);
-        margin: 5px;
-      }
-    }
-    /* 屏幕宽度大于900px时，每个分类内的网站采用三列布局 */
-    @media (min-width: 900px) {
-      .category li {
-        width: calc(33.33% - 10px);
-      }
-    }
-    .footer {
+    footer {
+      background-color: #2196F3;
+      color: #fff;
       text-align: center;
-      color: #888;
-      margin-top: 40px;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>跑起来 paobu.org 跑步,越野跑,马拉松</h1>
+  </header>
+
   <div class="container">
-    <h1>跑步相关网页导航</h1>
-    <p>以下为精选的跑步相关网站，中文网站集中在上方，英文网站在下方（英文名称保持原样）。</p>
-    
-    <!-- 中文网站部分 -->
-    <section id="chinese-sites">
-      <h2 class="section-title">中文网站</h2>
-      
-      <!-- 1. 跑步资讯 -->
-      <div class="category">
-        <h3>跑步资讯</h3>
-        <ul>
-          <li><a href="http://www.paobuzhongguo.com" target="_blank">跑步中国网</a></li>
-          <li><a href="http://www.runnernews.cn" target="_blank">跑者资讯网</a></li>
-          <li><a href="http://www.chinarunning.cn" target="_blank">中国跑步网</a></li>
-          <li><a href="http://www.dailyrun.cn" target="_blank">跑步每日</a></li>
-          <li><a href="http://www.runonline.cn" target="_blank">跑步在线</a></li>
-          <li><a href="http://www.runhome.cn" target="_blank">跑步之家</a></li>
-          <li><a href="http://www.runexpress.cn" target="_blank">跑步速递</a></li>
-          <li><a href="http://www.runhotnews.cn" target="_blank">跑步热讯</a></li>
-          <li><a href="http://www.runvision.cn" target="_blank">跑步视界</a></li>
-          <li><a href="http://www.runquicknews.cn" target="_blank">跑步快讯</a></li>
-        </ul>
-      </div>
-      
-      <!-- 2. 跑步训练 -->
-      <div class="category">
-        <h3>跑步训练</h3>
-        <ul>
-          <li><a href="http://www.runtrainingcamp.cn" target="_blank">跑步训练营</a></li>
-          <li><a href="http://www.prorunningtraining.cn" target="_blank">专业跑步训练网</a></li>
-          <li><a href="http://www.runcoach.cn" target="_blank">跑步教练网</a></li>
-          <li><a href="http://www.runtechnique.cn" target="_blank">跑步技巧网</a></li>
-          <li><a href="http://www.trainingplan.cn" target="_blank">跑步训练计划</a></li>
-          <li><a href="http://www.runstrategy.cn" target="_blank">跑步攻略网</a></li>
-          <li><a href="http://www.runninggym.cn" target="_blank">跑步训练馆</a></li>
-          <li><a href="http://www.runelevate.cn" target="_blank">跑步进阶</a></li>
-          <li><a href="http://www.rundriven.cn" target="_blank">跑步达人训练</a></li>
-          <li><a href="http://www.runsession.cn" target="_blank">跑步实战训练</a></li>
-        </ul>
-      </div>
-      
-      <!-- 3. 跑步社交 -->
-      <div class="category">
-        <h3>跑步社交</h3>
-        <ul>
-          <li><a href="http://www.runningfriends.cn" target="_blank">跑友交流网</a></li>
-          <li><a href="http://www.runcommunity.cn" target="_blank">跑步社交圈</a></li>
-          <li><a href="http://www.runclub.cn" target="_blank">跑步俱乐部</a></li>
-          <li><a href="http://www.runnersforum.cn" target="_blank">跑者论坛</a></li>
-          <li><a href="http://www.runmeetup.cn" target="_blank">跑步相约网</a></li>
-          <li><a href="http://www.ilove2run.cn" target="_blank">爱跑网</a></li>
-          <li><a href="http://www.runpartners.cn" target="_blank">跑步伙伴</a></li>
-          <li><a href="http://www.runtribe.cn" target="_blank">跑步部落</a></li>
-          <li><a href="http://www.runshare.cn" target="_blank">跑步分享网</a></li>
-          <li><a href="http://www.runenthusiasts.cn" target="_blank">跑步同好会</a></li>
-        </ul>
-      </div>
-      
-      <!-- 4. 跑步装备 -->
-      <div class="category">
-        <h3>跑步装备</h3>
-        <ul>
-          <li><a href="http://www.rungear.cn" target="_blank">跑步装备网</a></li>
-          <li><a href="http://www.runsneakers.cn" target="_blank">专业跑鞋网</a></li>
-          <li><a href="http://www.runaccessories.cn" target="_blank">跑步配件之家</a></li>
-          <li><a href="http://www.rungearrecommend.cn" target="_blank">跑步装备推荐</a></li>
-          <li><a href="http://www.runwear.cn" target="_blank">跑步服饰网</a></li>
-          <li><a href="http://www.runtechgear.cn" target="_blank">跑步科技装备</a></li>
-          <li><a href="http://www.geardata.cn" target="_blank">跑步装备大全</a></li>
-          <li><a href="http://www.runequipment.cn" target="_blank">跑步设备网</a></li>
-          <li><a href="http://www.runproducts.cn" target="_blank">跑步用品汇</a></li>
-          <li><a href="http://www.gearreviews.cn" target="_blank">跑步装备评测</a></li>
-        </ul>
-      </div>
-      
-      <!-- 5. 跑步赛事 -->
-      <div class="category">
-        <h3>跑步赛事</h3>
-        <ul>
-          <li><a href="http://www.runevents.cn" target="_blank">跑步赛事网</a></li>
-          <li><a href="http://www.marathonchina.cn" target="_blank">全国马拉松网</a></li>
-          <li><a href="http://www.runraces.cn" target="_blank">跑步比赛信息</a></li>
-          <li><a href="http://www.runactivities.cn" target="_blank">跑步活动网</a></li>
-          <li><a href="http://www.racehub.cn" target="_blank">跑步赛事汇</a></li>
-          <li><a href="http://www.runregister.cn" target="_blank">跑步报名网</a></li>
-          <li><a href="http://www.racedirectory.cn" target="_blank">跑步比赛查询</a></li>
-          <li><a href="http://www.runcenter.cn" target="_blank">跑步活动中心</a></li>
-          <li><a href="http://www.rundate.cn" target="_blank">跑步赛事日历</a></li>
-          <li><a href="http://www.runchallenge.cn" target="_blank">跑步挑战网</a></li>
-        </ul>
-      </div>
-      
-      <!-- 6. 跑步数据与记录 -->
-      <div class="category">
-        <h3>跑步数据与记录</h3>
-        <ul>
-          <li><a href="http://www.runrecords.cn" target="_blank">跑步记录网</a></li>
-          <li><a href="http://www.rundata.cn" target="_blank">跑步数据分析</a></li>
-          <li><a href="http://www.runstats.cn" target="_blank">跑步统计网</a></li>
-          <li><a href="http://www.runplatform.cn" target="_blank">跑步记录平台</a></li>
-          <li><a href="http://www.runtracker.cn" target="_blank">跑步追踪网</a></li>
-          <li><a href="http://www.runcenter.cn" target="_blank">跑步数据中心</a></li>
-          <li><a href="http://www.runtimelog.cn" target="_blank">跑步时间记录</a></li>
-          <li><a href="http://www.runresults.cn" target="_blank">跑步成绩网</a></li>
-          <li><a href="http://www.rundigital.cn" target="_blank">跑步数码网</a></li>
-          <li><a href="http://www.runappdata.cn" target="_blank">跑步APP数据</a></li>
-        </ul>
-      </div>
-      
-      <!-- 7. 跑步博客 -->
-      <div class="category">
-        <h3>跑步博客</h3>
-        <ul>
-          <li><a href="http://www.runblogger.cn" target="_blank">跑步达人博客</a></li>
-          <li><a href="http://www.runmood.cn" target="_blank">跑步心情</a></li>
-          <li><a href="http://www.rundiary.cn" target="_blank">跑步日记网</a></li>
-          <li><a href="http://www.runexperience.cn" target="_blank">跑步心得分享</a></li>
-          <li><a href="http://www.runlifestyle.cn" target="_blank">跑步生活博客</a></li>
-          <li><a href="http://www.runstories.cn" target="_blank">跑步故事</a></li>
-          <li><a href="http://www.runnotes.cn" target="_blank">跑步笔记网</a></li>
-          <li><a href="http://www.runessays.cn" target="_blank">跑步随笔</a></li>
-          <li><a href="http://www.runreading.cn" target="_blank">跑步读书笔记</a></li>
-          <li><a href="http://www.runcolumn.cn" target="_blank">跑步专栏</a></li>
-        </ul>
-      </div>
-      
-      <!-- 8. 跑步论坛 -->
-      <div class="category">
-        <h3>跑步论坛</h3>
-        <ul>
-          <li><a href="http://www.runforum.cn" target="_blank">跑步论坛之家</a></li>
-          <li><a href="http://www.rundiscuss.cn" target="_blank">跑步讨论区</a></li>
-          <li><a href="http://www.runexchange.cn" target="_blank">跑步交流论坛</a></li>
-          <li><a href="http://www.runqanda.cn" target="_blank">跑步问答网</a></li>
-          <li><a href="http://www.runmasters.cn" target="_blank">跑步大咖论坛</a></li>
-          <li><a href="http://www.runtechforum.cn" target="_blank">跑步技术论坛</a></li>
-          <li><a href="http://www.runexperienceforum.cn" target="_blank">跑步经验分享</a></li>
-          <li><a href="http://www.runinteractive.cn" target="_blank">跑步互动网</a></li>
-          <li><a href="http://www.runcommunityforum.cn" target="_blank">跑步社群论坛</a></li>
-          <li><a href="http://www.runloversforum.cn" target="_blank">跑步爱好者论坛</a></li>
-        </ul>
-      </div>
-      
-      <!-- 9. 跑步视频 -->
-      <div class="category">
-        <h3>跑步视频</h3>
-        <ul>
-          <li><a href="http://www.runvideos.cn" target="_blank">跑步视频网</a></li>
-          <li><a href="http://www.runteachvideos.cn" target="_blank">跑步教学视频</a></li>
-          <li><a href="http://www.rundoc.cn" target="_blank">跑步纪录片</a></li>
-          <li><a href="http://www.runmotionvideos.cn" target="_blank">跑步运动视频</a></li>
-          <li><a href="http://www.runhighlights.cn" target="_blank">跑步精彩瞬间</a></li>
-          <li><a href="http://www.runvshare.cn" target="_blank">跑步视频分享</a></li>
-          <li><a href="http://www.runtechvideo.cn" target="_blank">跑步技巧视频</a></li>
-          <li><a href="http://www.runracevideo.cn" target="_blank">跑步赛事视频</a></li>
-          <li><a href="http://www.runstarvideo.cn" target="_blank">跑步达人视频</a></li>
-          <li><a href="http://www.runchannel.cn" target="_blank">跑步视频频道</a></li>
-        </ul>
-      </div>
-      
-      <!-- 10. 跑步健康与营养 -->
-      <div class="category">
-        <h3>跑步健康与营养</h3>
-        <ul>
-          <li><a href="http://www.runhealth.cn" target="_blank">跑步健康网</a></li>
-          <li><a href="http://www.runnutrition.cn" target="_blank">跑步营养指南</a></li>
-          <li><a href="http://www.runrecovery.cn" target="_blank">跑步恢复与健康</a></li>
-          <li><a href="http://www.runmedicine.cn" target="_blank">跑步运动医学</a></li>
-          <li><a href="http://www.runwellness.cn" target="_blank">跑步健康生活</a></li>
-          <li><a href="http://www.runsen.cn" target="_blank">跑步养生网</a></li>
-          <li><a href="http://www.rundiet.cn" target="_blank">跑步饮食指导</a></li>
-          <li><a href="http://www.runhealthforum.cn" target="_blank">跑步健康论坛</a></li>
-          <li><a href="http://www.runfitness.cn" target="_blank">跑步运动保健</a></li>
-          <li><a href="http://www.runhealthnews.cn" target="_blank">跑步健康资讯</a></li>
-        </ul>
-      </div>
-    </section>
-    
-    <!-- 英文网站部分 -->
-    <section id="english-sites">
-      <h2 class="section-title">英文网站</h2>
-      <!-- 11. 跑步应用软件 (英文) -->
-      <div class="category">
-        <h3>Running Apps</h3>
-        <ul>
-          <li><a href="https://www.nike.com/cn/running" target="_blank">Nike Run Club</a></li>
-          <li><a href="https://www.adidas.com.cn/running" target="_blank">Adidas Running</a></li>
-          <li><a href="https://www.strava.com" target="_blank">Strava</a></li>
-          <li><a href="https://connect.garmin.com" target="_blank">Garmin Connect</a></li>
-          <li><a href="https://runkeeper.com" target="_blank">Runkeeper</a></li>
-          <li><a href="https://www.runtastic.com" target="_blank">Runtastic</a></li>
-          <li><a href="https://www.keep.com.cn" target="_blank">Keep</a></li>
-          <li><a href="https://www.mapmyrun.com" target="_blank">MapMyRun</a></li>
-          <li><a href="https://www.endomondo.com" target="_blank">Endomondo</a></li>
-          <li><a href="https://www.underarmour.com" target="_blank">Under Armour Record</a></li>
-        </ul>
-      </div>
-    </section>
-    
-    <div class="footer">
-      <p>&copy; 2025 跑步导航. 版权所有.</p>
+    <!-- 跑步 -->
+    <div class="category">
+      <h2>跑步 (Running)</h2>
+      <ul>
+        <li><a href="https://www.gudong.com/" target="_blank">咕咚</a> - 跑步与运动记录平台</li>
+        <li><a href="https://www.keep.com/" target="_blank">Keep</a> - 跑步训练与健身指导</li>
+        <li><a href="https://www.paobu8.com/" target="_blank">跑步吧</a> - 跑步资讯与社区</li>
+        <li><a href="https://www.runnersworld.com/" target="_blank">Runner's World</a> - 国际跑步资讯</li>
+        <li><a href="https://www.runnersblueprint.com/" target="_blank">Runner's Blueprint</a> - 跑步技巧与训练计划</li>
+      </ul>
+    </div>
+
+    <!-- 越野跑 -->
+    <div class="category">
+      <h2>越野跑 (Trail Running)</h2>
+      <ul>
+        <li><a href="https://www.trailrunnermag.com/" target="_blank">Trail Runner Magazine</a> - 越野跑资讯</li>
+        <li><a href="https://www.trailrunning.com/" target="_blank">TrailRunning</a> - 越野跑资源分享</li>
+        <li><a href="https://www.traillink.com/" target="_blank">Traillink</a> - 越野跑路线推荐</li>
+      </ul>
+    </div>
+
+    <!-- 徒步 -->
+    <div class="category">
+      <h2>徒步 (Hiking)</h2>
+      <ul>
+        <li><a href="https://www.alltrails.com/" target="_blank">AllTrails</a> - 全球徒步路线推荐</li>
+        <li><a href="https://www.hikingproject.com/" target="_blank">Hiking Project</a> - 徒步路线与指南</li>
+        <li><a href="https://www.qyer.com/" target="_blank">穷游网</a> - 旅行与徒步攻略</li>
+        <li><a href="https://www.xiaohongshu.com/" target="_blank">小红书</a> - 户外经验与分享</li>
+        <li><a href="https://www.campinghelper.com/" target="_blank">露营助手</a> - 露营与徒步装备指南</li>
+      </ul>
+    </div>
+
+    <!-- 自行车与骑行 -->
+    <div class="category">
+      <h2>自行车与骑行 (Cycling &amp; Riding)</h2>
+      <ul>
+        <li><a href="https://www.dongchedi.com/" target="_blank">懂车帝</a> - 自行车资讯与评测（部分内容）</li>
+        <li><a href="https://www.zol.com.cn/cycling/" target="_blank">中关村在线-自行车</a> - 自行车装备及评测</li>
+        <li><a href="https://www.cyclingnews.com/" target="_blank">Cycling News</a> - 国际自行车资讯</li>
+      </ul>
+    </div>
+
+    <!-- 户外综合 -->
+    <div class="category">
+      <h2>户外综合 (Outdoor &amp; Adventure)</h2>
+      <ul>
+        <li><a href="https://www.outsideonline.com/" target="_blank">Outside Online</a> - 户外生活与冒险杂志</li>
+        <li><a href="https://www.rei.com/" target="_blank">REI</a> - 户外装备及活动指南</li>
+        <li><a href="https://www.hichina.com/" target="_blank">户外中国</a> - 户外资讯与装备评测</li>
+        <li><a href="https://www.douban.com/group/64375/" target="_blank">豆瓣-户外</a> - 户外活动讨论社区</li>
+      </ul>
+    </div>
+
+    <!-- 装备与评测 -->
+    <div class="category">
+      <h2>装备与评测 (Gear &amp; Reviews)</h2>
+      <ul>
+        <li><a href="https://gearjunkie.com/" target="_blank">GearJunkie</a> - 户外装备与科技资讯</li>
+        <li><a href="https://www.theadventurejunkies.com/" target="_blank">The Adventure Junkies</a> - 装备评测与户外攻略</li>
+        <li><a href="https://www.outdoorgearlab.com/" target="_blank">OutdoorGearLab</a> - 专业装备评测</li>
+      </ul>
+    </div>
+
+    <!-- 户外摄影 -->
+    <div class="category">
+      <h2>户外摄影 (Outdoor Photography)</h2>
+      <ul>
+        <li><a href="https://www.instagram.com/explore/tags/outdoorphotography/" target="_blank">Instagram Outdoors</a> - 全球户外摄影分享</li>
+      </ul>
+    </div>
+
+    <!-- 社区与论坛 -->
+    <div class="category">
+      <h2>社区与论坛 (Community &amp; Forums)</h2>
+      <ul>
+        <li><a href="https://www.douban.com/group/64375/" target="_blank">豆瓣-户外</a> - 户外活动讨论社区</li>
+        <li><a href="https://www.zhihu.com/topic/19550945/hot" target="_blank">知乎-跑步</a> - 跑步与户外话题讨论</li>
+        <li><a href="https://bbs.hupu.com/" target="_blank">虎扑论坛</a> - 综合运动及户外讨论</li>
+        <li><a href="https://tieba.baidu.com/f?kw=跑步" target="_blank">百度贴吧-跑步</a> - 跑步爱好者贴吧</li>
+        <li><a href="https://tieba.baidu.com/f?kw=徒步" target="_blank">百度贴吧-徒步</a> - 徒步讨论社区</li>
+        <li><a href="https://tieba.baidu.com/f?kw=户外" target="_blank">百度贴吧-户外</a> - 户外运动交流</li>
+        <li><a href="https://www.sports.cn/community" target="_blank">运动健身社区</a> - 运动与健身讨论</li>
+      </ul>
+    </div>
+
+    <!-- 活动与赛事 -->
+    <div class="category">
+      <h2>活动与赛事 (Events &amp; Competitions)</h2>
+      <ul>
+        <li><a href="https://www.worldmarathon.com/" target="_blank">世界马拉松大赛</a> - 国际马拉松赛事</li>
+        <li><a href="https://www.paobu8.com/event" target="_blank">跑步吧赛事</a> - 跑步赛事与活动</li>
+      </ul>
     </div>
   </div>
+
+  <footer>
+    <p>&copy; paobu.org 跑步 越野跑 马拉松</p>
+  </footer>
 </body>
 </html>
