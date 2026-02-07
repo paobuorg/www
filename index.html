@@ -1,186 +1,152 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>跑起来 paobu.org 跑步,越野跑,马拉松</title>
-  <style>
-    /* 基本页面样式 */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background-color: #f5f5f5;
-    }
-    header {
-      background-color: #2196F3;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1em;
-    }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-    }
-    .category {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin: 10px;
-      padding: 20px;
-      flex: 1 1 300px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .category h2 {
-      margin-top: 0;
-      color: #2196F3;
-      border-bottom: 2px solid #2196F3;
-      padding-bottom: 5px;
-    }
-    .category ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .category li {
-      margin: 10px 0;
-    }
-    .category li a {
-      color: #333;
-      text-decoration: none;
-    }
-    .category li a:hover {
-      color: #2196F3;
-    }
-    footer {
-      background-color: #2196F3;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
-    @media (max-width: 600px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑步跑起来 paobu.org 探索全球最美跑步圣地</title>
+    <meta name="description" content="探索世界各地最美的跑步路线，从城市路跑到山地越野，发现全球跑步圣地">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>跑起来 paobu.org 跑步,越野跑,马拉松</h1>
-  </header>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🏃</span>
+                    <span class="logo-text">跑步跑起来</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav" id="mainNav">
+                <button class="nav-toggle" id="navToggle" aria-label="打开导航菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="nav-link active" onclick="navigation.showHome(); return false;">首页</a></li>
+                    <li><a href="#" class="nav-link" onclick="navigation.showContinentsPage(); return false;">大洲</a></li>
+                    <li><a href="#" class="nav-link" onclick="navigation.showTagsPage(); return false;">标签</a></li>
+                    <li><a href="#" class="nav-link" onclick="navigation.showDifficultyPage(); return false;">难度</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="切换暗色模式">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="search-toggle" id="searchToggle" aria-label="打开搜索">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="搜索路线名称或地点...">
+                <button class="search-close" id="searchClose">✕</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </header>
 
-  <div class="container">
-    <!-- 跑步 -->
-    <div class="category">
-      <h2>跑步 (Running)</h2>
-      <ul>
-        <li><a href="https://www.gudong.com/" target="_blank">咕咚</a> - 跑步与运动记录平台</li>
-        <li><a href="https://www.keep.com/" target="_blank">Keep</a> - 跑步训练与健身指导</li>
-        <li><a href="https://www.paobu8.com/" target="_blank">跑步吧</a> - 跑步资讯与社区</li>
-        <li><a href="https://www.runnersworld.com/" target="_blank">Runner's World</a> - 国际跑步资讯</li>
-        <li><a href="https://www.runnersblueprint.com/" target="_blank">Runner's Blueprint</a> - 跑步技巧与训练计划</li>
-      </ul>
-    </div>
+    <main class="main-content">
+        <section class="breadcrumb-section" id="breadcrumbSection" style="margin-top: 0;">
+            <nav class="breadcrumb" id="breadcrumb" aria-label="面包屑导航">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                </ol>
+            </nav>
+        </section>
 
-    <!-- 越野跑 -->
-    <div class="category">
-      <h2>越野跑 (Trail Running)</h2>
-      <ul>
-        <li><a href="https://www.trailrunnermag.com/" target="_blank">Trail Runner Magazine</a> - 越野跑资讯</li>
-        <li><a href="https://www.trailrunning.com/" target="_blank">TrailRunning</a> - 越野跑资源分享</li>
-        <li><a href="https://www.traillink.com/" target="_blank">Traillink</a> - 越野跑路线推荐</li>
-      </ul>
-    </div>
+        <section class="tags-section" id="tags">
+            <div class="container">
+                <div class="tags-cloud" id="tagsCloud">
+                </div>
+            </div>
+        </section>
 
-    <!-- 徒步 -->
-    <div class="category">
-      <h2>徒步 (Hiking)</h2>
-      <ul>
-        <li><a href="https://www.alltrails.com/" target="_blank">AllTrails</a> - 全球徒步路线推荐</li>
-        <li><a href="https://www.hikingproject.com/" target="_blank">Hiking Project</a> - 徒步路线与指南</li>
-        <li><a href="https://www.qyer.com/" target="_blank">穷游网</a> - 旅行与徒步攻略</li>
-        <li><a href="https://www.xiaohongshu.com/" target="_blank">小红书</a> - 户外经验与分享</li>
-        <li><a href="https://www.campinghelper.com/" target="_blank">露营助手</a> - 露营与徒步装备指南</li>
-      </ul>
-    </div>
+        <section class="difficulty-section" id="difficulty">
+            <div class="container">
+                <div class="difficulty-grid" id="difficultyGrid">
+                </div>
+            </div>
+        </section>
 
-    <!-- 自行车与骑行 -->
-    <div class="category">
-      <h2>自行车与骑行 (Cycling &amp; Riding)</h2>
-      <ul>
-        <li><a href="https://www.dongchedi.com/" target="_blank">懂车帝</a> - 自行车资讯与评测（部分内容）</li>
-        <li><a href="https://www.zol.com.cn/cycling/" target="_blank">中关村在线-自行车</a> - 自行车装备及评测</li>
-        <li><a href="https://www.cyclingnews.com/" target="_blank">Cycling News</a> - 国际自行车资讯</li>
-      </ul>
-    </div>
+        <section class="continents-section" id="continents">
+            <div class="container">
+                <div class="continents-grid" id="continentsGrid">
+                </div>
+            </div>
+        </section>
 
-    <!-- 户外综合 -->
-    <div class="category">
-      <h2>户外综合 (Outdoor &amp; Adventure)</h2>
-      <ul>
-        <li><a href="https://www.outsideonline.com/" target="_blank">Outside Online</a> - 户外生活与冒险杂志</li>
-        <li><a href="https://www.rei.com/" target="_blank">REI</a> - 户外装备及活动指南</li>
-        <li><a href="https://www.hichina.com/" target="_blank">户外中国</a> - 户外资讯与装备评测</li>
-        <li><a href="https://www.douban.com/group/64375/" target="_blank">豆瓣-户外</a> - 户外活动讨论社区</li>
-      </ul>
-    </div>
+        <section class="routes-section" id="routes">
+            <div class="container">
+                <div class="routes-filter" id="routesFilter">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="road">路跑</button>
+                    <button class="filter-btn" data-filter="trail">越野跑</button>
+                    <button class="filter-btn" data-filter="marathon">马拉松</button>
+                </div>
+                <div class="routes-waterfall" id="routesWaterfall">
+                </div>
+                <div class="loading-indicator" id="loadingIndicator">
+                    <div class="spinner"></div>
+                    <span>加载中...</span>
+                </div>
+            </div>
+        </section>
 
-    <!-- 装备与评测 -->
-    <div class="category">
-      <h2>装备与评测 (Gear &amp; Reviews)</h2>
-      <ul>
-        <li><a href="https://gearjunkie.com/" target="_blank">GearJunkie</a> - 户外装备与科技资讯</li>
-        <li><a href="https://www.theadventurejunkies.com/" target="_blank">The Adventure Junkies</a> - 装备评测与户外攻略</li>
-        <li><a href="https://www.outdoorgearlab.com/" target="_blank">OutdoorGearLab</a> - 专业装备评测</li>
-      </ul>
-    </div>
+        <section class="route-detail-section" id="routeDetail" style="display: none;">
+            <div class="container">
+                <div class="route-detail" id="routeDetailContent">
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- 户外摄影 -->
-    <div class="category">
-      <h2>户外摄影 (Outdoor Photography)</h2>
-      <ul>
-        <li><a href="https://www.instagram.com/explore/tags/outdoorphotography/" target="_blank">Instagram Outdoors</a> - 全球户外摄影分享</li>
-      </ul>
-    </div>
+    <footer class="site-footer" id="about">
+        <div class="footer-container">
+            <div class="footer-stats">
+                <div class="footer-stat-item">
+                    <span class="footer-stat-number" id="totalRoutes">0</span><span class="footer-stat-label">精选路线</span>
+                </div>
+                <div class="footer-stat-item">
+                    <span class="footer-stat-number" id="totalCountries">0</span><span class="footer-stat-label">国家地区</span>
+                </div>
+                <div class="footer-stat-item">
+                    <span class="footer-stat-number" id="totalContinents">0</span><span class="footer-stat-label">大洲</span>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 跑步跑起来 paobu.org 发现全球最美跑步路线，从城市街道到山野小径。</p>
+            </div>
+        </div>
+    </footer>
 
-    <!-- 社区与论坛 -->
-    <div class="category">
-      <h2>社区与论坛 (Community &amp; Forums)</h2>
-      <ul>
-        <li><a href="https://www.douban.com/group/64375/" target="_blank">豆瓣-户外</a> - 户外活动讨论社区</li>
-        <li><a href="https://www.zhihu.com/topic/19550945/hot" target="_blank">知乎-跑步</a> - 跑步与户外话题讨论</li>
-        <li><a href="https://bbs.hupu.com/" target="_blank">虎扑论坛</a> - 综合运动及户外讨论</li>
-        <li><a href="https://tieba.baidu.com/f?kw=跑步" target="_blank">百度贴吧-跑步</a> - 跑步爱好者贴吧</li>
-        <li><a href="https://tieba.baidu.com/f?kw=徒步" target="_blank">百度贴吧-徒步</a> - 徒步讨论社区</li>
-        <li><a href="https://tieba.baidu.com/f?kw=户外" target="_blank">百度贴吧-户外</a> - 户外运动交流</li>
-        <li><a href="https://www.sports.cn/community" target="_blank">运动健身社区</a> - 运动与健身讨论</li>
-      </ul>
-    </div>
-
-    <!-- 活动与赛事 -->
-    <div class="category">
-      <h2>活动与赛事 (Events &amp; Competitions)</h2>
-      <ul>
-        <li><a href="https://www.worldmarathon.com/" target="_blank">世界马拉松大赛</a> - 国际马拉松赛事</li>
-        <li><a href="https://www.paobu8.com/event" target="_blank">跑步吧赛事</a> - 跑步赛事与活动</li>
-      </ul>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; paobu.org 跑步 越野跑 马拉松</p>
-  </footer>
+    <!-- Data Files -->
+    <script src="data/asia/china.js"></script>
+    <script src="data/asia/japan.js"></script>
+    <script src="data/asia/singapore.js"></script>
+    <script src="data/asia/uae.js"></script>
+    <script src="data/north-america/usa.js"></script>
+    <script src="data/north-america/canada.js"></script>
+    <script src="data/europe/uk.js"></script>
+    <script src="data/europe/france.js"></script>
+    <script src="data/europe/switzerland.js"></script>
+    <script src="data/europe/germany.js"></script>
+    <script src="data/europe/italy.js"></script>
+    <script src="data/oceania/australia.js"></script>
+    <script src="data/oceania/newzealand.js"></script>
+    <script src="data/africa/south-africa.js"></script>
+    <script src="data/africa/tanzania.js"></script>
+    <script src="data/south-america/brazil.js"></script>
+    <script src="data/south-america/peru.js"></script>
+    <script src="data/south-america/argentina.js"></script>
+    
+    <script src="js/app.js"></script>
 </body>
 </html>
